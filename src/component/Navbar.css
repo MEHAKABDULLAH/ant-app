@@ -1,0 +1,104 @@
+/* src/component/Navbar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  
+    color: black;
+}
+span{
+    color: orange;
+
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    transition: max-height 0.3s ease; 
+    font-size: x-small;/* Smooth transition for dropdown */
+}
+
+.nav-links a {
+    color: black;
+    font-size: smaller;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.signup-button {
+    margin-left: 15px;
+    padding: 5px 10px;
+    background-color: white;
+    color: black;
+    font-size: x-small;
+    border: 1px  black;
+   
+    
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline;
+    margin-left: 5px;
+    background-color: white;
+}
+
+.dropbtn {
+   font-size: smaller;
+    color: black;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+  
+    color: black;
+    min-width: 100px;
+    
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.toggler {
+    display: none; /* Hidden by default */
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 500px) {
+    .nav-links {
+        display: none; /* Hide links by default */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute;
+        top: 60px; /* Position below the navbar */
+        right: 0;
+        background-color: #333;
+        width: 100%; /* Full width */
+        z-index: 1; /* Ensure it appears above other content */
+    }
+
+    .nav-links.open {
+        display: flex; /* Show links when toggled */
+    }
+
+    .toggler {
+        display: block; /* Show toggler button on mobile */
+    }
+}
